@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 {
   "appTitle": "MobileTech",
   "waitPlease": "Por favor espere...",
@@ -8,3 +9,15 @@
     "description": "Waiting text"
   }
 }
+=======
+{
+  "appTitle": "MobileTech",
+  "waitPlease": "Por favor espere...",
+  "@appTitle": {
+    "description": "App title"
+  },
+  "@waitPlease": {
+    "description": "Waiting text"
+  }
+}
+>>>>>>> Stashed changes
