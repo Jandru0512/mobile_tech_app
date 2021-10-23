@@ -1,0 +1,10 @@
+{
+  "appTitle": "MobileTech",
+  "waitPlease": "Por favor espere...",
+  "@appTitle": {
+    "description": "App title"
+  },
+  "@waitPlease": {
+    "description": "Waiting text"
+  }
+}

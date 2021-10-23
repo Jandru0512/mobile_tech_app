@@ -1,4 +1,4 @@
-# flutter_application_1
+# mobile_tech_app
 
 A new Flutter project.
 
