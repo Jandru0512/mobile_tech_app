@@ -80,8 +80,8 @@ class _LoginScreenState extends State<LoginScreen> {
         autofocus: true,
         keyboardType: TextInputType.emailAddress,
         decoration: InputDecoration(
-          hintText: 'Ingresa tu email...',
-          labelText: 'Email',
+          hintText: AppLocalizations.of(context)!.emailHint,
+          labelText: AppLocalizations.of(context)!.email,
           errorText: _emailShowError ? _emailError : null,
           prefixIcon: const Icon(Icons.alternate_email),
           suffixIcon: const Icon(Icons.email),
@@ -100,8 +100,8 @@ class _LoginScreenState extends State<LoginScreen> {
       child: TextField(
         obscureText: !_passwordShow,
         decoration: InputDecoration(
-          hintText: 'Ingresa tu contraseña...',
-          labelText: 'Contraseña',
+          hintText: AppLocalizations.of(context)!.passwordHint,
+          labelText: AppLocalizations.of(context)!.password,
           errorText: _passwordShowError ? _passwordError : null,
           prefixIcon: const Icon(Icons.lock),
           suffixIcon: IconButton(
@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _showRememberme() {
     return CheckboxListTile(
-      title: const Text('Recordarme'),
+      title: Text(AppLocalizations.of(context)!.rememberMe),
       value: _rememberme,
       onChanged: (value) {
         setState(() {
@@ -171,9 +171,10 @@ class _LoginScreenState extends State<LoginScreen> {
       await showAlertDialog(
           context: context,
           title: 'Error',
-          message: 'Verifica que estes conectado a internet.',
+          message: AppLocalizations.of(context)!.checkConnection,
           actions: <AlertDialogAction>[
-            const AlertDialogAction(key: null, label: 'Aceptar'),
+            AlertDialogAction(
+                key: null, label: AppLocalizations.of(context)!.ok),
           ]);
       return;
     }
@@ -183,7 +184,7 @@ class _LoginScreenState extends State<LoginScreen> {
       'password': _password,
     };
 
-    var url = Uri.parse('${Constants.apiUrl}/api/Account/CreateToken');
+    var url = Uri.parse('${Constants.apiUrl}/api/AccountApi/CreateToken');
     var response = await http.post(
       url,
       headers: {
@@ -200,7 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (response.statusCode >= 400) {
       setState(() {
         _passwordShowError = true;
-        _passwordError = "Email o contraseña incorrectos";
+        _passwordError = AppLocalizations.of(context)!.wrongEmailOrPassword;
       });
       return;
     }
@@ -227,11 +228,11 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_email.isEmpty) {
       isValid = false;
       _emailShowError = true;
-      _emailError = 'Debes ingresar tu email.';
+      _emailError = AppLocalizations.of(context)!.requiredEmail;
     } else if (!EmailValidator.validate(_email)) {
       isValid = false;
       _emailShowError = true;
-      _emailError = 'Debes ingresar un email válido.';
+      _emailError = AppLocalizations.of(context)!.requiredValidEmail;
     } else {
       _emailShowError = false;
     }
@@ -239,12 +240,11 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_password.isEmpty) {
       isValid = false;
       _passwordShowError = true;
-      _passwordError = 'Debes ingresar tu contraseña.';
+      _passwordError = AppLocalizations.of(context)!.requiredPassword;
     } else if (_password.length < 6) {
       isValid = false;
       _passwordShowError = true;
-      _passwordError =
-          'Debes ingresar una contraseña de al menos 6 carácteres.';
+      _passwordError = AppLocalizations.of(context)!.requiredPasswordMin;
     } else {
       _passwordShowError = false;
     }
@@ -256,7 +256,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget _showLoginButton() {
     return Expanded(
       child: ElevatedButton(
-        child: const Text('Iniciar Sesión'),
+        child: Text(AppLocalizations.of(context)!.login),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith<Color>(
               (Set<MaterialState> states) {
