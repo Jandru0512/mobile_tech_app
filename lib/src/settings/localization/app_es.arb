@@ -1,10 +1,30 @@
 {
   "appTitle": "MobileTech",
+  "checkConnection": "Verifica que estes conectado a internet.",
+  "darkTheme": "Tema oscuro",
+  "editProfile": "Editar perfil",
+  "email": "Correo electrónico",
+  "emailHint": "Ingresa tu email...",
+  "lightTheme": "Tema claro",
+  "login": "Iniciar sesión",
+  "logout": "Cerrar sesión",
+  "ok": "Aceptar",
+  "password": "Contraseña",
+  "passwordHint": "Ingresa tu contraseña...",
+  "rememberMe": "Recordarme",
+  "requiredEmail": "Debes ingresar tu correo electrónico.",
+  "requiredPassword": "Debes ingresar tu contraseña.",
+  "requiredPasswordMin": "Debes ingresar una contraseña de al menos 6 caracteres.",
+  "requiredValidEmail": "Debes ingresar tu correo electrónico válido.",
+  "settings": "Configuraciones",
+  "systemTheme": "Tema del sistema",
+  "user": "Usuario",
+  "users": "Usuarios",
   "waitPlease": "Por favor espere...",
-  "@appTitle": {
-    "description": "App title"
-  },
-  "@waitPlease": {
-    "description": "Waiting text"
-  }
+  "wrongEmailOrPassword": "Email o contraseña incorrectos.",
+  "welcome": "Bienvenid@"
 }
+
+
+
+

@@ -8,8 +8,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mobile_tech_app/src/models/token.dart';
 import 'package:mobile_tech_app/src/screens/login/wait_screen.dart';
 import 'package:mobile_tech_app/src/screens/login/login_screen.dart';
-import 'package:mobile_tech_app/src/screens/sample_feature/sample_item_details_view.dart';
-import 'package:mobile_tech_app/src/screens/sample_feature/sample_item_list_view.dart';
 import 'package:mobile_tech_app/src/screens/settings/settings_view.dart';
 import 'package:mobile_tech_app/src/settings/settings/settings_controller.dart';
 
@@ -73,11 +71,8 @@ class _MyAppState extends State<MyApp> {
                 switch (routeSettings.name) {
                   case SettingsView.routeName:
                     return SettingsView(controller: widget.settingsController);
-                  case SampleItemDetailsView.routeName:
-                    return const SampleItemDetailsView();
-                  case SampleItemListView.routeName:
                   default:
-                    return const SampleItemListView();
+                    return const LoginScreen();
                 }
               },
             );
